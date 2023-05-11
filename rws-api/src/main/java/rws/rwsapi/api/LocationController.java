@@ -3,8 +3,8 @@ package rws.rwsapi.api;
 import main.dao.Location;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import rws.rwsapi.service.LocationService;
 
@@ -18,8 +18,8 @@ public class LocationController implements LocationApi {
         this.locationService = locationService;
     }
 
-    @GetMapping
-    public ResponseEntity<Location> getLocation(@RequestParam int zipcode) {
+    @GetMapping("/{zipcode}")
+    public ResponseEntity<Location> getLocation(@PathVariable int zipcode) {
         Location location = locationService.findLocation(zipcode);
         return ResponseEntity.ok(location);
     }
