@@ -12,15 +12,15 @@ The JAR-file can be found at the following path : `4pp/rws/out/artifacts/rws_jar
 
 ### Error handling
 The API may throw the following exceptions:
-- **BadRequestException** – Thrown when the provided zipcode is invalid. This can occur if the given integer is 0, 
+- BadRequestException – Thrown when the provided zipcode is invalid. This can occur if the given integer is 0, 
 negative or not four characters in length.
-- **LocationNotFoundException** – Thrown when no location is found for the given zipcode.
+- LocationNotFoundException – Thrown when no location is found for the given zipcode.
 
 ### Example usage
 To retrieve location data for a given zipcode, make a GET-request to the location endpoint with the zipcode 
 as a path parameter. For example:
 
-`GET http://localhost:8080/location/1234` 
+`GET http://localhost:8080/location/2622` 
 
 If successful, the API will return a JSON object containing the location data:
 
@@ -37,3 +37,14 @@ If successful, the API will return a JSON object containing the location data:
     }
 }
 ```
+
+# Getting Started
+
+The 4pp-project is split into two projects:
+1. `rws`
+2. `rws-api`
+
+Before using each project, follow the instructions in their README-files. 
+First complete the instructions for the `rws` project before using the `rws-api` project.
+
+Refer to the README-files for each project for detailed instructions on how to get started.
